@@ -81,6 +81,25 @@ namespace MySystem.Controllers
 			return Ok(new { Token = token });
 		}
 
+		[HttpPost("forgot-password")]
+		public async Task<ActionResult<UserViewModel>> ForgotPassword([FromBody] ForgotPasswordModel model)
+		{
+			IdentityUser? user  = await _userManager.FindByEmailAsync(model.Email);
+			if (user is null)
+			{
+				return NotFound("User not found");
+			}
+			
+			UserViewModel userViewModel = new UserViewModel
+			{
+				Id = user.Id,
+				Email = user.Email
+			};
+
+			return Ok(userViewModel);
+		}
+
+
 
 		[HttpPost("register")]
 		public async Task<IActionResult> AddUser([FromBody] RegisterInputModel model)

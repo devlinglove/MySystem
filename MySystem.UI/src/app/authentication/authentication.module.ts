@@ -5,7 +5,8 @@ import { SignupComponent } from './signup/signup.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from '../shared/shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 
@@ -13,7 +14,8 @@ import { SharedModule } from '../shared/shared/shared.module';
   declarations: [
     LoginComponent,
     SignupComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     CommonModule,

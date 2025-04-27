@@ -39,9 +39,9 @@ export class FormInputEmailComponent implements ControlValueAccessor {
     this.isDisabled = isDisabled
   }
 
- get formField(): FormControl {
+  get formField(): FormControl {
     return this.parentForm.get(this.formFieldName) as FormControl;
- }
+  }
 
  onChange(event: Event){
   let string = (<HTMLInputElement>event.target).value

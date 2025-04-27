@@ -9,5 +9,7 @@
 		public RegisterViewModel(RegisterInputModel inputModel) : base(inputModel)
 		{
 		}
+
+		public string Id { get; set; } = string.Empty;
 	}
 }

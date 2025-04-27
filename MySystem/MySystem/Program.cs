@@ -53,6 +53,18 @@ builder.Services.AddAuthentication(options =>
 	};
 });
 
+// Cross-Origin 
+builder.Services
+	.AddCors(options =>
+	{
+		options.AddPolicy("AllowOrigin", builder => builder
+			.WithOrigins("http://localhost:4200")
+			.AllowAnyHeader()
+			.AllowAnyMethod()
+
+		);
+	});
+
 builder.Services.MySystemExtensionsMethods();
 
 var app = builder.Build();
@@ -65,6 +77,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowOrigin");
 
 app.UseAuthentication();
 app.UseAuthorization();
