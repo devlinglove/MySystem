@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+// $input-border-color: #999;
+// $input-focus-border-color: #28a745;
+// $input-bg: #f7f7f7;
+
+
+
+//$font-family-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" ;
+$form-label-font-weight: 600;
+$input-focus-box-shadow: none;
+
+@import 'bootstrap/scss/bootstrap';
+
+
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 570px
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  //-webkit-box-shadow: none;
+  //transition: background-color 5000s ease-in-out 0s;
+}
+
+
+.btapp-btn-primary{
+    --bs-btn-disabled-bg: #999;
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-border-color: none;
+}
+
+.form-control.ng-dirty.ng-invalid{
+    border-color: #dc3545;
+}
+
+.form-control.ng-touched.ng-invalid{
+    border-color: #dc3545;
+}
+
+.btapp-form-control-password{
+    border: none;
+}
+
+.input-group-control{
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+}
+
+.input-group:has(.form-control.ng-touched.ng-invalid) {
+    border-color: #dc3545;
+}
+
+.input-group-control.invalid-input{
+    border-color: #dc3545;
+}
+
+
+.input-group:has(.form-control:focus) {
+    border-color: #86b7fe; 
+    outline: 0;
+    box-shadow: none;
+}
+
+
+.btapp-btn-link{
+   text-decoration: none;
+}
+

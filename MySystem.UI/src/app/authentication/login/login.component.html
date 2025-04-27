@@ -1,0 +1,52 @@
+<div class="form-container">
+    <form 
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmitForm()"
+        autocomplete="false"
+    >
+    <div class="mb-3">
+        <app-form-input-email
+            [parentForm]="loginForm"
+            formFieldName="email"
+        >
+        </app-form-input-email>
+    </div>
+
+    <div class="mb-4">
+        <!-- <label class="form-label" for="password">Password</label>
+        <input 
+            class="form-control"
+            type="password" 
+            name="password" 
+            id="password" 
+            formControlName="password" 
+            [ngClass]="{
+                'invalid-input': passwordField.invalid && (passwordField.dirty || passwordField.touched)
+            }"
+        />
+
+        <div *ngIf="passwordField.invalid && (passwordField.dirty || passwordField.touched)">
+            <div *ngIf="passwordField.hasError('required')">Password is required</div>
+        </div> -->
+        <app-form-input-password
+            [parentForm]="loginForm"
+            formFieldName="password"
+        >
+        </app-form-input-password>
+    </div>
+   
+    <div class="d-grid">
+        <button 
+            class="btn btn-primary btapp-btn-primary" 
+            [disabled]="!loginForm.valid" 
+            type="submit"
+            
+        >
+            Login in to your account
+        </button>
+    </div>
+    
+    </form>
+</div>
+
+

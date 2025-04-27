@@ -1,0 +1,20 @@
+<label class="form-label" for="email">Email address</label>
+<input 
+    class="form-control" 
+    type="text" 
+    [name]="formFieldName" 
+    id="email"
+    [value]="value"
+    [disabled]="isDisabled"
+    [formControl]="formField"
+    pattern="^\w+([\.\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w{2,3})+$"
+    [ngClass]="{
+        'invalid-input': formField && formField.invalid && (formField.dirty || formField.touched)
+    }"
+    (input)="onChange($event)"
+/>
+
+<div class="text-danger" *ngIf="formField && formField.invalid && (formField.dirty || formField.touched)">
+    <div *ngIf="formField.hasError('required')">Email address is required</div>
+    <div *ngIf="formField.hasError('pattern')">Email address is not valid</div>
+</div>
